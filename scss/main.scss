@@ -151,7 +151,7 @@ a.dropdown__link {
     width: 74px;
 
     &:hover::after {
-        rotate: 180deg;
+        transform: rotate(180deg);
     }
 
     &.dropdown__link-blog::after {
@@ -1025,7 +1025,7 @@ h1 {
         top: 50%;
     }
 
-    .dropdown__content {
+    ul.dropdown__content {
         position: relative;
         top: 11px;
         border: transparent;
@@ -1034,11 +1034,18 @@ h1 {
 
         &.active {
             height: auto;
+            display: block;
             overflow: visible;
             opacity: 1;
             transition: all .5s;
             width: 100%;
         }
+    }
+    .header__dropdown:hover .dropdown__content{
+        display: none;
+    }
+    .header__dropdown:hover .dropdown__content.active{
+        display: block;
     }
 
     .header__dropdown a {
