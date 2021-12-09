@@ -142,7 +142,8 @@ a.dropdown__link {
   width: 74px;
 }
 a.dropdown__link:hover::after {
-  rotate: 180deg;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 a.dropdown__link.dropdown__link-blog::after {
   content: '';
@@ -995,20 +996,29 @@ h1 {
     top: 50%;
   }
 
-  .dropdown__content {
+  ul.dropdown__content {
     position: relative;
     top: 11px;
     border: transparent;
     padding: 0;
     background-color: #FFCC2A;
   }
-  .dropdown__content.active {
+  ul.dropdown__content.active {
     height: auto;
+    display: block;
     overflow: visible;
     opacity: 1;
     -webkit-transition: all .5s;
     transition: all .5s;
     width: 100%;
+  }
+
+  .header__dropdown:hover .dropdown__content {
+    display: none;
+  }
+
+  .header__dropdown:hover .dropdown__content.active {
+    display: block;
   }
 
   .header__dropdown a {
